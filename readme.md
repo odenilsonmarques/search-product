@@ -30,6 +30,9 @@ Este plugin adiciona uma funcionalidade de **busca AJAX com carregamento dinâmi
 3. Ative o plugin no painel do WordPress.
 
 ---
+## 🧩 Requisitos de Front-End
+
+Para que a busca AJAX funcione corretamente, **você deve inserir o formulário abaixo no local desejado do seu tema** (por exemplo: `header.php` ou um template personalizado):
 
 ```
 <form role="search" method="get" class="d-flex flex-grow-1 mx-3 pt-3" action="<?php echo esc_url(home_url('/')); ?>">
@@ -48,3 +51,26 @@ Este plugin adiciona uma funcionalidade de **busca AJAX com carregamento dinâmi
 <input type="hidden" name="post_type" value="product" />
 </form>
 ```
+---
+📂 Estrutura do Plugin
+
+- buscar-produtos-woocommerce/
+    - buscar-produtos-woocommerce.php
+    - js/
+        - busca.js
+    - css/
+        - busca.css
+
+---
+
+🔐 Segurança
+
+- A entrada do usuário é sanitizada via sanitize_text_field.
+
+- Endpoint com permission_callback seguro.
+
+---
+
+📅 Versão
+1.0.0
+Autor: Odenilson M Araújo
